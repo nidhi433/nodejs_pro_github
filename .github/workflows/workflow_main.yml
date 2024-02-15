@@ -3,12 +3,7 @@ pipeline:
   stages:
     - stage: pull-code
       steps:
-        - checkout:
-            scm:
-              git:
-                credentialsId: 'Github_token'
-                url: 'https://github.com/nidhi433/nodejs_pro_github.git'
-                branch: 'main'
+        - checkout: scm
     - stage: Install Dependencies
       steps:
         - sh: 'npm install'
