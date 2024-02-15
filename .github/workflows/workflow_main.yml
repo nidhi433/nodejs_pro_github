@@ -19,7 +19,7 @@ jobs:
           npm install -D webpack-cli
       - name: Build and test
         run: |
-          npm build
+          npm run build
           npm test
           npm run coverage
       - name: SonarQube Analysis
