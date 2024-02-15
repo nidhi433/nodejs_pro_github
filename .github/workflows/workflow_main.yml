@@ -1,29 +1,27 @@
-pipeline:
-  agent: any
-  stages:
-    - stage: pull-code
-      steps:
-        - checkout: scm
-    - stage: Install Dependencies
-      steps:
-        - sh: 'npm install'
-        - sh: 'npm install -D webpack-cli'
-    - stage: Build
-      steps:
-        - sh: 'npm run build'
-    - stage: Test
-      steps:
-        - sh: 'npm test'
-        - sh: 'npm run coverage'
-    - stage: SonarQube Analysis
-      environment:
-        SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
-      steps:
-        - sh: >
-            ${SONAR_RUNNER_HOME}/bin/sonar-scanner
-            -Dsonar.projectKey=serverless
-            -Dsonar.sources=.
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-            -Dsonar.java.binaries=./*
-            -Dsonar.host.url=http://localhost:9000
-            -Dsonar.login=sqp_57ea10a1eec13aa3ff2c8a213c90312d5f72a392
+stages:
+  - name: pull-code
+    steps:
+      - checkout: scm
+  - name: Install Dependencies
+    steps:
+      - sh: npm install
+      - sh: npm install -D webpack-cli
+  - name: Build
+    steps:
+      - sh: npm run build
+  - name: Test
+    steps:
+      - sh: npm test
+      - sh: npm run coverage
+  - name: SonarQube Analysis
+    environment:
+      SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
+    steps:
+      - sh: >
+          ${SONAR_RUNNER_HOME}/bin/sonar-scanner
+          -Dsonar.projectKey=serverless
+          -Dsonar.sources=.
+          -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+          -Dsonar.java.binaries=./*
+          -Dsonar.host.url=http://localhost:9000
+          -Dsonar.login=sqp_57ea10a1eec13aa3ff2c8a213c90312d5f72a392
