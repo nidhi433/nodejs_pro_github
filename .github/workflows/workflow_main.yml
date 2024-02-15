@@ -15,8 +15,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: |
-          npm run install
-          npm run install -D webpack-cli
+          npm i
+          npm install -D webpack-cli
       - name: Build and test
         run: |
           npm run build
