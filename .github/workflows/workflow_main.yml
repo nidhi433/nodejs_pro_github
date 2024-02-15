@@ -1,23 +1,26 @@
-stages:
-  - name: pull-code
-    steps:
-      - checkout: scm
-  - name: Install Dependencies
-    steps:
-      - sh: npm install
-      - sh: npm install -D webpack-cli
-  - name: Build
-    steps:
-      - sh: npm run build
-  - name: Test
-    steps:
-      - sh: npm test
-      - sh: npm run coverage
-  - name: SonarQube Analysis
+name: write the ysml file for sonarcube
+on: 
+ push:
+  branches:
+   - main
+jobs:
+ run-on: ubuntu-latest
+  steps:
+   - name: checkout the code
+     uses: action/checkout@v2
+  - name: install the npm install
+    run: |
+     npm install
+     npm install -D webpack-cli
+  - name: build the node code
+    run: |
+       npm run build
+       npm test
+       npm run coverage
+       - name: running on SonarQube Analysis
     environment:
       SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
-    steps:
-      - sh: >
+      run: |
           ${SONAR_RUNNER_HOME}/bin/sonar-scanner
           -Dsonar.projectKey=serverless
           -Dsonar.sources=.
