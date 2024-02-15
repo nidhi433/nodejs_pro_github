@@ -7,7 +7,7 @@ pipeline:
             scm:
               git:
                 credentialsId: 'Github_token'
-                url: 'https://github.com/nidhi433/nodejsproject.git'
+                url: 'https://github.com/nidhi433/nodejs_pro_github.git'
                 branch: 'main'
     - stage: Install Dependencies
       steps:
