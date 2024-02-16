@@ -22,17 +22,16 @@ jobs:
           npm run build
           npm test
           npm run coverage
-      
       - name: SonarQube Analysis
-    run: |
-     /opt/sonar-scanner-3.0.3.778-linux/bin/sonar-scanner \
-     -Dsonar.projectKey=serverless \
-     -Dsonar.sources=. \
-     -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-     -Dsonar.java.binaries=./* \
-     -Dsonar.host.url=http://localhost:9000 \
-     -Dsonar.login=your_sonarqube_token_or_secret_key
-     shell: bash
-     env:
-     SONAR_RUNNER_HOME: /opt/sonar-scanner-3.0.3.778-linux
+        run: |
+         /opt/sonar-scanner-3.0.3.778-linux/bin/sonar-scanner \
+         -Dsonar.projectKey=serverless \
+         -Dsonar.sources=. \
+         -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+         -Dsonar.java.binaries=./* \
+         -Dsonar.host.url=http://localhost:9000 \
+         -Dsonar.login=your_sonarqube_token_or_secret_key
+        shell: bash
+        env:
+         SONAR_RUNNER_HOME: /opt/sonar-scanner-3.0.3.778-linux
         
