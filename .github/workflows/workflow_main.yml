@@ -23,7 +23,6 @@ jobs:
           npm test
           npm run coverage
       - name: SonarQube Scan
-        uses:sonarsource/sonarqube-scan-action@master
         env:
          SONAR_TOKEN: ${{ sqp_33b2dc0e3bd2dbbc345dce551edbaaffa80832f9 }}
          SONAR_HOST_URL: ${{ http://localhost:9000/ }}
