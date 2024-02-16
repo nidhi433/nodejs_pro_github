@@ -32,7 +32,4 @@ jobs:
          -Dsonar.host.url=http://localhost:9000 \
          -Dsonar.login=your_sonarqube_token_or_secret_key
          shell: bash
-         with:
-         url: ${{ http://localhost:9000/projects }}
-         token: ${{ sqp_57ea10a1eec13aa3ff2c8a213c90312d5f72a392 }}
-        
+         
