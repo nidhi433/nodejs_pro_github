@@ -23,7 +23,7 @@ jobs:
           npm test
           npm run coverage
       - name: SonarQube Analysis
-          env:
+      - env: |
     SONAR_RUNNER_HOME: "/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3"
   steps:
     - run: |
