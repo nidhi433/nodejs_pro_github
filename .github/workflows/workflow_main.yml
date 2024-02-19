@@ -27,7 +27,7 @@ jobs:
           SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
         run: |
           /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3/bin/sonar-runner\
-          -Dsonar.projectKey=serverlesss \
+          -Dsonar.projectKey=serverless \
           -Dsonar.sources=. \
           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
           -Dsonar.host.url=http://localhost:9000 \
