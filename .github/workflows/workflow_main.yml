@@ -49,7 +49,7 @@ jobs:
           ${SONAR_RUNNER_HOME}/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3/bin/sonar-scanner
   
 
-          -Dsonar.projectKey=serverless \
+          -Dsonar.projectKey=serverless1 \
 
           -Dsonar.sources=. \
 
