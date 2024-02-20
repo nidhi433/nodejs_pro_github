@@ -21,9 +21,9 @@ jobs:
           npm test
           npm run coverage
       - name: SonarQube Analysis
-        env:
-          SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
         run: |
+          npm install -g sonarqube-scanner
+          sonar-scanner \
           ${SONAR_RUNNER_HOME}/home/nidhii/actions-runner/_work/nodejs_pro_github/nodejs_pro_github/node_modules/sonar-scanner \
           -Dsonar.projectKey=serverless1 \
           -Dsonar.sources=. \
