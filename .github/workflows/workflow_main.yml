@@ -24,7 +24,6 @@ jobs:
         run: |
           npm install -g sonarqube-scanner
           sonar-scanner \
-          ${SONAR_RUNNER_HOME}/home/nidhii/actions-runner/_work/nodejs_pro_github/nodejs_pro_github/node_modules/sonar-scanner \
           -Dsonar.projectKey=serverless1 \
           -Dsonar.sources=. \
           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
