@@ -25,8 +25,7 @@ jobs:
 
       - name: SonarQube Analysis
         env:
-          SONAR_TOKEN: ${{ sqp_44596f7ea84deb602b4618486b1ed3572e55b9af }}
-          SONAR_HOST_URL: ${{ http://localhost:9000 }}
+          SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
         run: |
           ${SONAR_RUNNER_HOME}/bin/sonar-scanner \
           -Dsonar.projectKey=serverless1 \
