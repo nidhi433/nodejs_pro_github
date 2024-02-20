@@ -24,12 +24,19 @@ jobs:
           npm run coverage
 
       - name: SonarQube Analysis
+      # You can pin the exact commit or the version.
+        # uses: SonarSource/sonarqube-scan-action@v1.1.0
+        uses: SonarSource/sonarqube-scan-action@7295e71c9583053f5bf40e9d4068a0c974603ec8
         env:
-          SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
-        run: |
-          ${SONAR_RUNNER_HOME}/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3/bin \
-          -Dsonar.projectKey=serverless1 \
-          -Dsonar.sources=. \
-          -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-          -Dsonar.host.url=http://localhost:9000 \
-          -Dsonar.login=sqp_44596f7ea84deb602b4618486b1ed3572e55b9af
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information
+          SONAR_TOKEN: ${{ sqp_44596f7ea84deb602b4618486b1ed3572e55b9af }}   # Generate a token on SonarQube, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
+          SONAR_HOST_URL: ${{ http://localhost:9000 }}   # add the URL of your instance to the secrets of this repo with the name SONAR_HOST_URL (Settings > Secrets > Actions > add new repository secret)
+        with:
+          # Additional arguments for the sonarcloud scanner
+          args:
+           ${SONAR_RUNNER_HOME}/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3/bin \
+           -Dsonar.projectKey=serverless1 \
+           -Dsonar.sources=. \
+           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+           -Dsonar.host.url=http://localhost:9000 \
+           -Dsonar.login=sqp_44596f7ea84deb602b4618486b1ed3572e55b9af
