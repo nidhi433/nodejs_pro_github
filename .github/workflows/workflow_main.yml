@@ -21,7 +21,7 @@ jobs:
           npm run coverage
       - name: SonarQube Analysis
         run: |
-          -Dsonar.projectKey=serverless \
+          -Dsonar.projectKey=serverless1 \
           -Dsonar.sources=. \
           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
           -Dsonar.host.url=http://localhost:9000 \
