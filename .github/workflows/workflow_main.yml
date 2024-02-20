@@ -1,61 +1,35 @@
 name: SonarQube Analysis
- 
+
 on:
-
   push:
-
     branches:
-
       - main
- 
+
 jobs:
-
   sonarqube:
-
     runs-on: self-hosted
-
     steps:
-
       - name: Checkout code
-
         uses: actions/checkout@v2
 
       - name: Install dependencies
-
         run: |
-
           npm install
-
           npm install -D webpack-cli
 
       - name: Build and test
-
         run: |
-
           npm run build
-
           npm test
-
           npm run coverage
 
       - name: SonarQube Analysis
-
         env:
-
           SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
-
         run: |
-
-          ${SONAR_RUNNER_HOME}/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3/bin
-
-  
-
+          ${SONAR_RUNNER_HOME}/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3/bin \
           -Dsonar.projectKey=serverless1 \
-
           -Dsonar.sources=. \
-
           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-
           -Dsonar.host.url=http://localhost:9000 \
-
           -Dsonar.login=sqp_44596f7ea84deb602b4618486b1ed3572e55b9af
