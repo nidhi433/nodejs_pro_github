@@ -1,44 +1,31 @@
 name: SonarQube Analysis
-
+ 
 on:
   push:
     branches:
-      - main  
-  pull_request:
-    branches:
-      - main  
-
+      - main
 jobs:
-  sonarqube-analysis:
+  sonarqube:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: v20.11.1
-
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: /usr/bin/npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
-
       - name: Install dependencies
-        run: npm install
-             npm install -D webpack-cli
-
-      - name: Analyze code with SonarQube
         run: |
-          npm install -g sonarqube-scanner
-          sonar-scanner \
-            -Dsonar.projectKey=serverless1 \
-            -Dsonar.sources=. \
-            -Dsonar.host.url=http://localhost:9000 \
-            -Dsonar.login=sqp_44596f7ea84deb602b4618486b1ed3572e55b9af
+          npm install
+          npm install -D webpack-cli
+      - name: Build and test
+        run: |
+          npm run build
+          npm test
+          npm run coverage
+      - name: SonarQube Analysis
+        env:
+          SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
+        run: |
+          ${SONAR_RUNNER_HOME}/bin/sonar-scanner \
+          -Dsonar.projectKey=serverless \
+          -Dsonar.sources=. \
+          -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+          -Dsonar.host.url=http://localhost:9000 \
+          -Dsonar.login=sqp_57ea10a1eec13aa3ff2c8a213c90312d5f72a392
