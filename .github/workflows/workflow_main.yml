@@ -24,10 +24,12 @@ jobs:
           npm run coverage
 
       - name: SonarQube Analysis
-         SONAR_RUNNER_HOME="/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3"
-         "$SONAR_RUNNER_HOME/bin/sonar-scanner" \
-         -Dsonar.projectKey=serverless \
-         -Dsonar.sources=. \
-         -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-         -Dsonar.host.url=http://localhost:9000 \
-         -Dsonar.login=sqp_44596f7ea84deb602b4618486b1ed3572e55b9af
+         env:
+          SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
+        run: |
+          ${SONAR_RUNNER_HOME}/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3/bin
+          -Dsonar.projectKey=serverless1 \
+          -Dsonar.sources=. \
+          -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+          -Dsonar.host.url=http://localhost:9000 \
+          -Dsonar.login=sqp_44596f7ea84deb602b4618486b1ed3572e55b9af
