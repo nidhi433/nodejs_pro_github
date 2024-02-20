@@ -46,7 +46,7 @@ jobs:
 
         run: |
 
-          ${SONAR_RUNNER_HOME}/bin/sonar-scanner \
+          ${SONAR_RUNNER_HOME}/opt/sonar-scanner \  
 
           -Dsonar.projectKey=serverless \
 
