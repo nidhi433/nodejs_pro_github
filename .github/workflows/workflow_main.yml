@@ -46,7 +46,8 @@ jobs:
 
         run: |
 
-          ${SONAR_RUNNER_HOME}/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3/bin/sonar-scanner
+          ${SONAR_RUNNER_HOME}/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube_Scanner_3.0.3/bin
+
   
 
           -Dsonar.projectKey=serverless1 \
