@@ -23,6 +23,7 @@ jobs:
           npm test
           npm run coverage
           
+          
       - name: SonarQube Analysis
         run: |
           -Dsonar.projectKey=serverless1 \
