@@ -1,4 +1,4 @@
-service: myserverless
+service: myserverless1
 frameworkVersion: '3'
 useDotenv: true
 configValidationMode: error
