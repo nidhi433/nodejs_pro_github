@@ -24,8 +24,6 @@ jobs:
           npm run coverage
           
       - name: SonarQube Analysis
-        env:
-          SONAR_SCANNER_HOME: "/home/nidhii/sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner"
         run: |
           /home/nidhii/sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner
           -Dsonar.projectKey=serverless1 \
