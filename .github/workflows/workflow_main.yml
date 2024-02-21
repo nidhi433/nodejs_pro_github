@@ -25,9 +25,9 @@ jobs:
           
       - name: SonarQube Analysis
         env:
-          SONAR_SCANNER_HOME: "/home/nidhii/sonar-scanner-4.8.0.2856-linux"
+          SONAR_SCANNER_HOME: "/home/nidhii/sonar-scanner-4.8.0.2856-linux/conf/sonar-scanner.properties"
         run: |
-          /home/nidhii/sonar-scanner-4.8.0.2856-linux
+          /home/nidhii/sonar-scanner-4.8.0.2856-linux/conf/sonar-scanner.properties
           -Dsonar.projectKey=serverless1 \
           -Dsonar.sources=. \
           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
