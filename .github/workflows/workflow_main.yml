@@ -27,6 +27,7 @@ jobs:
         env:
           SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
         run: |
+         sonar-scanner \
           -Dsonar.projectKey=serverless1 \
           -Dsonar.sources=. \
           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
