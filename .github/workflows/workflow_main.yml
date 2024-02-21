@@ -22,22 +22,7 @@ jobs:
           npm run build
           npm test
           npm run coverage
-         # Install unzip (if not already installed)
-      - name: Install unzip
-        run: sudo apt-get install unzip
-      
-    # Download SonarQube Scanner and extract it
-      - name: Download SonarQube Scanner
-        run: |
-         mkdir $HOME/sonarqube
-         wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-{VERSION}-linux.zip
-         unzip sonar-scanner-cli-{VERSION}-linux.zip -d $HOME/sonarqube
-        
-    # Print SONAR_RUNNER_HOME path
-      - name: Print SONAR_RUNNER_HOME path
-        run: echo "SONAR_RUNNER_HOME:$HOME/sonarqube/sonar-scanner-cli-5.0.1.3006-linux"
-   
-
+          
       - name: SonarQube Analysis
         env:
           SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
