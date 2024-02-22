@@ -23,5 +23,5 @@ jobs:
       
       - name: Run SonarQube analysis
         run: |
-         ${SONAR_RUNNER_HOME}/sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner
+         ${SONAR_RUNNER_HOME}/home/nidhii/sonar-scanner-4.8.0.2856-linux/bin
 
