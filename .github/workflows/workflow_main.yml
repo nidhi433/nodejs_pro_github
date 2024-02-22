@@ -26,18 +26,13 @@ jobs:
           npm run build
           npm test
           npm run coverage
-
-      - name: Determine projectBaseDir
-        id: projectbasedir
-        run: |
-          echo "::set-output name=dir::$(pwd)"
           
       - name: SonarQube Analysis
         uses: sonarsource/sonarcloud-github-action@master
         with:
           organization: "serverless"
           token: "sqp_6de6810c82092318bae8b6e7bd1f98e4ae860b03"
-          projectBaseDir: ${{ steps.projectbasedir.outputs.dir }}
+          projectBaseDir: "/home/nidhii/sonar-scanner-4.8.0.2856-linux/bin"
           projectKey: "server"
           projectName: "server"
           scannerMode: "CLI"
