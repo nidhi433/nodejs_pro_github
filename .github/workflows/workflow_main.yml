@@ -30,4 +30,5 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@master
         env:
          SONAR_TOKEN: "sqp_6de6810c82092318bae8b6e7bd1f98e4ae860b03"
-         SONAR_HOST_URL: "http://localhost:9000"
+         SONAR_HOST_URL: "http://localhost:9000/"
+         run: ./gradlew build sonar --info
