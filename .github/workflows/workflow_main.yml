@@ -21,4 +21,7 @@ jobs:
           npm run build
           npm test
           npm run coverage
-     
+          
+      - name: Install SonarQube Scanner
+        run: |
+          npm install -g sonarqube-scanner
