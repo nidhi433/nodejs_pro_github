@@ -36,7 +36,7 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           organization: "serverless"
-          token: "sqp_44596f7ea84deb602b4618486b1ed3572e55b9af"
+          token: "sqp_6de6810c82092318bae8b6e7bd1f98e4ae860b03"
           projectBaseDir: ${{ steps.projectbasedir.outputs.dir }}
           projectKey: "serverless1"
           projectName: "serverless"
