@@ -35,8 +35,8 @@ jobs:
         with:
           entryPoint: 'sonar-scanner'
           args: >
-            -Dsonar.projectKey=server
-            -Dsonar.organization=serverless
-            -Dsonar.projectName="Server Project"
+            -Dsonar.projectKey="server"
+            -Dsonar.organization="server"
+            -Dsonar.projectName="Server"
             -Dsonar.sources=.
             -Dsonar.exclusions=*/.spec.js,*/.test.js
