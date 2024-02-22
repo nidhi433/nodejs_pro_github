@@ -27,5 +27,5 @@ jobs:
 
       - name: Run SonarQube analysis
         run: |
-          sonar-scanner -Dsonar.token=${{ 'sqp_44596f7ea84deb602b4618486b1ed3572e55b9af' }}  
-          sonar-scanner -Dsonar.projectKey=serverless1
+          sonar-scanner -Dsonar.login="sqp_44596f7ea84deb602b4618486b1ed3572e55b9af"  
+          sonar-scanner -Dsonar.projectKey="serverless1"
