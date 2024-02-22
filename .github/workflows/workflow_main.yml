@@ -23,6 +23,6 @@ jobs:
       
       - name: Run SonarQube analysis
         run: |
-          sonar-scanner -Dsonar.projectKey="serverless1"
+          sonar-scanner -Dsonar.projectKey=serverless1
 
 
