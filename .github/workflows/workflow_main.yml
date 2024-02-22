@@ -32,7 +32,7 @@ jobs:
         run: mvn sonar:sonar -Dsonar.host.url=${{ http://localhost:9000/ }} -Dsonar.login=${{ server }}
       - uses: sonarsource/sonarqube-scan-action@master 
         with:
-         args: >
-          -Dsonar.projectKey=server
-          -Dsonar.sources=src/  
+          args: >
+           -Dsonar.projectKey=server
+           -Dsonar.sources=src/  
          
