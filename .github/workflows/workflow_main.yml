@@ -2,9 +2,7 @@ name: SonarQube Analysis
 
 on:
   push:
-     paths:
-      - '**/package.json'
-
+     
 
 jobs:
   sonarqube:
