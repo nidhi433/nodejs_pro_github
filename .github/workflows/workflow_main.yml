@@ -23,6 +23,7 @@
           npm run coverage    
 
       - name: SonarQube Analysis
+        run: |
          sonar-scanner \
          -Dsonar.projectKey=server \
          -Dsonar.sources=src \
