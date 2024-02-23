@@ -1,11 +1,10 @@
  name: SonarQube Analysis
- 
-on:
+ on:
   push:
     branches:
       - main
  
-jobs:
+ jobs:
   sonarqube:
     runs-on: ubuntu-latest
     steps:
@@ -19,8 +18,7 @@ jobs:
         run: |
           npm run build
           npm test
-          npm run coverage
-     
+          npm run coverage    
 
       - name: SonarQube Analysis
         run: sonar:sonar -Dsonar.host.url="http://localhost:9000/" -Dsonar.login='admin'
