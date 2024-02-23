@@ -22,17 +22,14 @@
           npm test
           npm run coverage  
           
-      - name: SonarQube Scan
-        uses: SonarSource/sonarcloud-github-action@v2
-        with:
-          args: >
-            -Dsonar.projectKey=server
-            -Dsonar.organization=server
-            -Dsonar.sources=.
-            -Dsonar.host.url=https://sonarcloud.io
-            -Dsonar.login=admin
-            -X
-          projectBaseDir: .
+      - name: SonarQube Analysis
+        run: |
+         sonar-scanner \
+         -Dsonar.projectKey=server \
+         -Dsonar.sources=src \
+         -Dsonar.host.url=http://localhost:9000 \
+         -Dsonar.login=sqp_6de6810c82092318bae8b6e7bd1f98e4ae860b03
+       
        
 
      
