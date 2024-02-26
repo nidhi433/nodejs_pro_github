@@ -23,11 +23,11 @@
           npm run coverage
           
       - name: SonarQube Analysis
-    env:
-     SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
-     run: |
-      chmod -R u+rwx /home/runner/sonar-scanner-5.0.1.3006-linux/bin/.scannerwork
-      ./sonar-scanner
+        env:
+         SONAR_RUNNER_HOME: "SonarQube Scanner 3.0.3"
+        run: |
+         chmod -R u+rwx /home/runner/sonar-scanner-5.0.1.3006-linux/bin/.scannerwork
+         ./sonar-scanner
 
          
     
