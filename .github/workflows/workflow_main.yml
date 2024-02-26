@@ -24,7 +24,7 @@
           
       - name: SonarQube Analysis
         run: |
-         sonar-scanner \
+         sonar-scanner-X \
          -Dsonar.projectKey=server \
          -Dsonar.sources=src \
          -Dsonar.host.url=http://localhost:9000 \
