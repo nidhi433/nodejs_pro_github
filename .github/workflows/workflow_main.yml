@@ -37,6 +37,13 @@ jobs:
         run: |
           echo "JAVA_HOME=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64" >> $GITHUB_ENV
           
+      - name: List Directory 
+        run: "ls"
+    
+      - name: Print Working Directory
+        run: "pwd"
+
+     
       - name: SonarQube Analysis
         run: |
          npm install -g sonarqube-scanner
