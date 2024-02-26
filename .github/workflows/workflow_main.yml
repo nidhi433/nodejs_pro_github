@@ -25,6 +25,8 @@
       - name: SonarQube Analysis
         run: |
          npm install -g sonarqube-scanner
+         sonar-scanner \
+           -Dsonar.projectKey=server \
          
 
          
