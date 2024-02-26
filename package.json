@@ -12,7 +12,7 @@
     "nyc": "^15.1.0",
     "serverless-offline": "^13.3.2",
     "serverless-plugin-typescript": "^2.1.5",
-    "sonar-scanner": "^4.6.0"
+    "sonar-scanner": "^3.1.0"
   },
   "dependencies": {
     "chai-http": "^4.4.0"
