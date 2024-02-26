@@ -22,7 +22,7 @@
           npm test
           npm run coverage
           
-      - name: SonarCloud Scan
+      - name: SonarQube Analysis
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ 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 }}  # Needed to get PR information, if any
