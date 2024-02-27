@@ -52,4 +52,4 @@ jobs:
            -Dsonar.projectKey=server \
            -Dsonar.host.url=$PUBLIC_URL \
            -Dsonar.login=$SONAR_TOKEN \
-           # Add more SonarQube analysis properties as needed
+           
