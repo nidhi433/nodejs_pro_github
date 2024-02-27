@@ -25,5 +25,5 @@ functions:
           cors: true
 custom:
   serverless-offline:
-     httpPort: 9000
+     httpPort: 9001
   
