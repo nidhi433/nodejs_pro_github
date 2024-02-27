@@ -13,7 +13,7 @@ provider:
   stage: dev
   region: us-east-1
   deploymentMethod: direct
-  runtime: nodejs16.x
+  runtime: nodejs12.x
 
 functions:
   helloWorld:
@@ -25,5 +25,7 @@ functions:
           cors: true
 custom:
   serverless-offline:
-     httpPort: 9001
-  
+     httpPort: 8000
+
+
+ 
