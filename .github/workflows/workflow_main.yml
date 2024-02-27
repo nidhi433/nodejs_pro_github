@@ -39,8 +39,9 @@ jobs:
           
       - name: Set Public URL
         run: |
-          echo "PUBLIC_URL=https://9980-2409-4050-2dbe-3565-d5c7-4adb-a1b1-c2c1.ngrok-free.app" >> $GITHUB_ENV
-      
+          echo "PUBLIC_URL=http://localhost:9000" >> $GITHUB_ENV
+          # echo "PUBLIC_URL=https://9980-2409-4050-2dbe-3565-d5c7-4adb-a1b1-c2c1.ngrok-free.app" >> $GITHUB_ENV
+
       - name: Set SonarQube Token
         run: |
           echo "SONAR_TOKEN=sqp_6de6810c82092318bae8b6e7bd1f98e4ae860b03" >> $GITHUB_ENV
