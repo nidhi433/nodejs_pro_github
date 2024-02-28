@@ -52,4 +52,6 @@ jobs:
            -Dsonar.projectKey=server \
            -Dsonar.host.url=$PUBLIC_URL \
            -Dsonar.login=$SONAR_TOKEN \
+           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+           -Dsonar.java.binaries=./* \
            # Add more SonarQube analysis properties as needed
