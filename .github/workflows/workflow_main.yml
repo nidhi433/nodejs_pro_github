@@ -54,4 +54,5 @@ jobs:
            -Dsonar.login=$SONAR_TOKEN \
            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
            -Dsonar.java.binaries=./* \
+           -Dsonar.sources=. \
            # Add more SonarQube analysis properties as needed
